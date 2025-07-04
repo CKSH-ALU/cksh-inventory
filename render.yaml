@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: cksh-inventory
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn -w 1 -b 0.0.0.0:10000 wsgi:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9
