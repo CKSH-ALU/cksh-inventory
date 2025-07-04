@@ -1,0 +1,287 @@
+/* ========== 基本設定 ========== */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100%;
+}
+
+/* 頁面容器 */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ========== 登入頁限定 ========== */
+body.login-page {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* 登入框 */
+.login-box {
+  width: 400px;
+  height: 550px;
+  background-color: #f7f7f7;
+  border: 2px solid #6ea3ff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* 登入標題與輸入框 */
+.login-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.login-box input {
+  width: 80%;
+  padding: 10px;
+  margin: 15px auto;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  display: block;
+}
+
+.login-box button {
+  margin-top: 30px;
+  padding: 10px 30px;
+  font-size: 18px;
+  background-color: #4c79ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.login-btn{
+  padding: 10px 30px;
+  font-size: 10px;
+  background-color: #4c79ff;
+  color: white;
+  border: black;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.login-btn:hover{
+  background-color: #000000;
+}
+
+/* 登入錯誤提示 */
+#status {
+  margin-top: 20px;
+  color: red;
+  font-weight: bold;
+}
+
+/* ========== 首頁功能按鈕 ========== */
+.function-btn {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #005eff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.function-btn:hover{
+  background-color: black;
+}
+
+/* ========== 網頁版型 ========== */
+
+/* 頂部資訊列 */
+.top-bar-sale {
+  background-color: #6ea3ff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.top-bar-manage {
+  background-color: #ff7f6e;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.top-bar-log {
+  background-color: #6eff7f;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* 搜尋欄 */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-bar input,
+.search-bar select {
+  font-size: 16px;
+  padding: 6px 10px;
+}
+
+/* 主內容區塊（左右區） */
+.main-area {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* 商品區與購物車 */
+.product-list, .cart-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.product-list {
+  background: #f2f2f2;
+}
+
+.cart-area {
+  background: #eaeaea;
+}
+
+/* 下拉選單樣式調整 */
+.cart-card select {
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-right: 5px;
+}
+
+/* 商品卡片 */
+.product-card, .cart-card {
+  background: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-left: 5px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+/* 加入按鈕 */
+.green-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* 下方操作列 */
+.bottom-bar-sale {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  background-color: #0047ab;
+}
+
+.bottom-bar-manage {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  background-color: #ab0e00;
+}
+
+.bottom-bar-log {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  background-color: #09ab00;
+}
+
+.bottom-bar-sale button {
+  background-color: #005fff;
+  width: 200px;
+  color: white;
+  font-size: 20px;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.bottom-bar-sale button:hover{
+  background-color: black;
+}
+
+.bottom-bar-manage button {
+  background-color: #ff2200;
+  width: 200px;
+  color: white;
+  font-size: 20px;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.bottom-bar-manage button:hover{
+  background-color: black;
+}
+
+.bottom-bar-log button {
+  background-color: #44ff00;
+  width: 200px;
+  color: black;
+  font-size: 20px;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.bottom-bar-log button:hover{
+  background-color: black;
+  color: white;
+}
+
+
+/* 留言 */
+.message-block {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  padding: 10px;
+  width: 100%;
+  background-color: #f9f9f9;
+  border-left: 1px solid #ccc;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.message-box{
+  padding: auto;
+  width: 50%;
+  border: none;
+  max-height: 80vh;
+  margin: 10px auto;
+  box-sizing: border-box;
+  overflow-y: auto;
+}

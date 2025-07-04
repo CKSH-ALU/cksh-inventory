@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>註冊頁面</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="login-page">
+  <div class="login-box">
+    <h2>會員註冊</h2>
+    <input type="text" id="realname" placeholder="真實姓名" class="input-box"><br>
+    <input type="text" id="account" placeholder="帳號名稱" class="input-box"><br>
+    <input type="password" id="password" placeholder="密碼" class="input-box"><br>
+    <button onclick="register()">註冊</button>
+    <p id="register-status" style="color:red; margin-top:10px;"></p>
+    <a href="/login">已有帳號？點此登入</a>
+  </div>
+  <script>
+    async function register() {
+      const name = document.getElementById('realname').value.trim();
+      const account = document.getElementById('account').value.trim();
+      const password = document.getElementById('password').value;
+
+      const res = await fetch('/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, account, password })
+      });
+
+      const result = await res.json();
+      if (result.status === 'success') {
+        window.location.href = '/login';
+      } else {
+        document.getElementById('register-status').innerText = result.message;
+      }
+    }
+  </script>
+</body>
+</html>

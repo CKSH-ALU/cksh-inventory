@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>商品販售</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- 上方資訊列 -->
+  <div class="top-bar-log">
+        <div class="search-bar">
+      <select id="action-filter">
+        <option value="">全部功能</option>
+        <option value="銷售">銷售</option>
+        <option value="退貨">退貨</option>
+        <option value="換貨">換貨</option>
+        <option value="贈與">贈與</option>
+        <option value="中心補貨">中心補貨</option>
+        <option value="工用">工用</option>
+        <option value="倉庫補貨/歸還">倉庫補貨/歸還</option>
+      </select>
+
+
+      <select id="staff-filter">
+        <option value="">全部人員</option>
+        <!-- js 載入後動態填入 -->
+      </select>
+    </div>
+    <div>
+      <button onclick="logout()" class="login-btn">登出</button>
+      <span id="staff-name" style="margin-left: 5px;">{{ name }}</span>
+    </div>
+  </div>
+
+  <!-- 主體區塊 -->
+  <div class="main-area" style="display: flex;">
+    <!-- 左側：紀錄區 -->
+    <div id="log-list" style="width: 60%; height: 75vh; overflow-y: auto; border-right: 1px solid #ccc; padding: 10px;"></div>
+
+    <!-- 右側：留言區 -->
+    <div id="log-detail" class="message-box"></div>
+  </div>
+
+  <!-- 下方操作列 -->
+  <div class="bottom-bar-log">
+    <button onclick="openDownloadModal()">月結</button>
+    <button onclick="openMessageDialog()">留言</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
